@@ -70,3 +70,31 @@ class Point {
 
 
 }
+class Canvas{
+	List<Points> list = new ArrayList<>();
+
+	public Canvas(List<Points> list) {
+		this.list = list;
+	}
+
+	public void dodavanje(Point novaTocka){
+		list.add(novaTocka);
+	}
+
+	public void brisenje(Point tocka){
+		list.remove(tocka);
+	}
+
+	public void pomestuvanje(char kade)
+	{
+		for(Point tocka : list)
+		{
+			switch(kade){
+				case 'L' : tocka.x--;
+				case 'R' : tocka.x++;
+				case 'D' : tocka.y--;
+				case 'U' : tocka.y++;
+			}
+		}
+	}
+}
